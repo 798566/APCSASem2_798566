@@ -1,12 +1,11 @@
 
 /**
- * Lab 109 write a pseudo code algorithm to sort an array of integers
- * them implement your code as a sorting algorithm
+ * Bubble Sort sorting algorithm
  *
  * @author Sophia
- * @version 0109
+ * @version 0110
  */
-public class Sort_Algorithm
+public class Bubble_Sort
 {
     int arr[];
     public void sort(int arr[]){
