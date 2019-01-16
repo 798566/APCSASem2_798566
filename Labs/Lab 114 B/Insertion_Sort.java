@@ -9,6 +9,7 @@ public class Insertion_Sort
 {
     ArrayList<Integer> arr = new ArrayList<Integer>();
     public void sort(ArrayList<Integer> arr){
+        long time = System.nanoTime();
         int compareNums = 0;
         int swapNums = 0;
         for (int i = 1; i < arr.size(); i++) {
@@ -22,9 +23,12 @@ public class Insertion_Sort
                 }
             }
         }
+        time = System.nanoTime() - time;
+        
         printArr(arr);
         System.out.println("comparisons = " + compareNums);
         System.out.println("swaps = " + swapNums);
+        System.out.println("time in nanoseconds = " + time);
     }
 
     public void printArr(ArrayList<Integer> arr){

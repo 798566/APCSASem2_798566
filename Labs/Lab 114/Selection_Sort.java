@@ -9,6 +9,7 @@ public class Selection_Sort
 {
     int arr[];
     public void sort(int arr[]){
+        long time = System.nanoTime();
         int compareNums = 0;
         int swapNums = 0;
         for (int i = 0; i < arr.length - 1; i++) {
@@ -26,9 +27,12 @@ public class Selection_Sort
             arr[smallestIndex] = original;
             swapNums++;
         }
+        time = System.nanoTime() - time;
+        
         printArr(arr);
         System.out.println("comparisons = " + compareNums);
         System.out.println("swaps = " + swapNums);
+        System.out.println("time in nanoseconds = " + time);
     }
 
     public void printArr(int arr[]){
