@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * ArrayList Project
  *
- * @Grace Jau
- * @version 1025
+ * @Sophia
+ * @version 0125
  */
 public class StudList{
     ArrayList<Student>studList;

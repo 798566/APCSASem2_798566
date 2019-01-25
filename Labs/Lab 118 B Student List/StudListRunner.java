@@ -2,8 +2,8 @@ import java.util.Scanner;
 /**
  * ArrayList Project
  *
- * @Grace Jau
- * @version 1025
+ * @Sophia
+ * @version 0125
  */
 public class StudListRunner
 {
@@ -21,7 +21,8 @@ public class StudListRunner
             System.out.println("5 Print all of the students' information");
             System.out.println("6 Print a student's information");
             System.out.println("7 Sort the list of students");
-            System.out.println("8 Exit");
+            System.out.println("8 Search the list for a student");
+            System.out.println("9 Exit");
             System.out.println();
             statement = in.nextLine();
             if (statement.equals("1")){
@@ -76,7 +77,39 @@ public class StudListRunner
             }else if (statement.equals("7")){
                 sl.runMergeSort();
                 System.out.println("The student list has been sorted.");
-            }else if (!statement.equals("8")){//accounts for other cases
+            }else if (statement.equals("8")){
+            //    System.out.println("1 Search by student name");
+            //    System.out.println("2 Search by student number");
+            //    System.out.println();
+            //    statement = in.nextLine();
+            //     if (in.nextLine().equals("1")){
+            //        System.out.println("Student last name:");
+            //        System.out.println();
+            //        name = in.nextLine();
+            //    }else if (in.nextLine().equals("2")){
+            //        System.out.println("Student number:");
+            //        System.out.println();
+            //        num = inputStudentNum();
+            //    }
+            //    sl.runBinarySearchNumber();
+            //    sl.printStudent(num, name);
+            
+                while (true){
+                    System.out.println("1 Search by student name");
+                    System.out.println("2 Search by student number");
+                    Scanner in = new Scanner (System.in);
+                    String s = in.nextLine();
+                }
+                if (in.nextLine() == "1"){//checks whether to ask for student number or last name
+                    name = "";
+                    num = inputStudentNum();
+                }else{
+                    System.out.println("Student last name:");
+                    name = in.nextLine();
+                    num = 0;
+                }
+                sl.printStudent(num, name);
+            }else if (!statement.equals("9")){//accounts for other cases
                 System.out.println("That was not a valid command. Please try again.");
             }
             System.out.println();
