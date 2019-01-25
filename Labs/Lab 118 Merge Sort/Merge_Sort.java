@@ -9,6 +9,11 @@ public class Merge_Sort
 {
     int[] a;
     int n;
+    public static void mergeSortPrint(int[] a, int n){
+        mergeSort(a, n);
+        printArr(a);
+    }
+    
     public static void mergeSort(int[] a, int n) {
         if (n < 2) { //  Base Case
             return;
