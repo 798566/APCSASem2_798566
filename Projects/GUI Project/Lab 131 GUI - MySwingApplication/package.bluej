@@ -2,10 +2,10 @@
 dependency1.from=MySwingApplication
 dependency1.to=CanvasComponent
 dependency1.type=UsesDependency
-editor.fx.0.height=938
-editor.fx.0.width=816
-editor.fx.0.x=1062
-editor.fx.0.y=94
+editor.fx.0.height=1160
+editor.fx.0.width=960
+editor.fx.0.x=960
+editor.fx.0.y=0
 objectbench.height=66
 objectbench.width=920
 package.divider.horizontal=0.6

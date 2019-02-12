@@ -9,40 +9,49 @@ import java.awt.event.*;
  */
 public class CanvasComponent extends JComponent implements MouseListener, MouseMotionListener
 {
-    private int x;
-    private int y;
-    private int width;
-    private int height;
-
-    CanvasComponent (int radius){
-        setSize(radius, radius);
-        width = radius;
-        height = radius;
-        x = radius;
-        y = radius;
-        int r = radius;
+    private int rectX;
+    private int rectY;
+    private int rectWidth;
+    private int rectHeight;
+    public int mouseFromX;
+    public int mouseFromY;
+    public boolean shapeSelected;
+    
+    CanvasComponent (int width, int height){
+        setSize(width, height);
+        rectX = 0;
+        rectY = 0;
+        rectWidth = 100;
+        rectHeight = 100;
+        this.addMouseListener(this);
+        this.addMouseMotionListener(this);
     }
 
     public void paintComponent (Graphics g){
         g.setColor(Color.black);
-        g.fillOval(x, y, width, height);
+        g.fillRect(rectX, rectY, rectWidth, rectHeight);
     }
 
     public void mouseClicked(MouseEvent e){}
 
     public void mousePressed(MouseEvent e){
-        int mouseFromX = e.getX();
-        int mouseFromY = e.getY();
+        mouseFromX = e.getX();
+        mouseFromY = e.getY();
         
-        if (mouseFromX >= x ||     // test to see if mouse is within the shape
-            mouseFromX <= (x + r) ||
-            mouseFromY >= y ||     
-            mouseFromY <= (y + r)) {
-            boolean shapeSelected;
-            }
+        if (mouseFromX >= rectX &&     // test to see if mouse is within the shape
+            mouseFromX <= (rectX + rectWidth) &&
+            mouseFromY >= rectY &&     
+            mouseFromY <= (rectY + rectHeight)) {
+            shapeSelected = true;
+        }
+        else {
+            shapeSelected = false;
+        }
     }
 
-    public void mouseReleased(MouseEvent e){}
+    public void mouseReleased(MouseEvent e){
+        
+    }
 
     public void mouseEntered(MouseEvent e){}
 
@@ -50,7 +59,16 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     
     
     public void mouseDragged(MouseEvent e){
-        
+        if (shapeSelected == true){
+            int mouseToX = e.getX();
+            int mouseToY = e.getY();
+            
+            rectX += (mouseToX - mouseFromX);
+            rectY += (mouseToY - mouseFromY);
+            mouseFromX = mouseToX;
+            mouseFromY = mouseToY;
+            repaint();
+        }
     }
     
     public void mouseMoved(MouseEvent e) {}
