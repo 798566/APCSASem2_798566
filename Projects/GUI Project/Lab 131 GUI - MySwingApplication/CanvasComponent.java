@@ -11,13 +11,9 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
 {
     private int x;
     private int y;
-    private int width;
-    private int height;
-
+    private int radius;
     CanvasComponent (int radius){
         setSize(radius, radius);
-        width = radius;
-        height = radius;
         x = radius;
         y = radius;
         int r = radius;
@@ -25,7 +21,7 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
 
     public void paintComponent (Graphics g){
         g.setColor(Color.black);
-        g.fillOval(x, y, width, height);
+        g.fillOval(x, y, radius, radius);
     }
 
     public void mouseClicked(MouseEvent e){}
@@ -33,7 +29,7 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     public void mousePressed(MouseEvent e){
         int mouseFromX = e.getX();
         int mouseFromY = e.getY();
-        
+        int r = radius;
         if (mouseFromX >= x ||     // test to see if mouse is within the shape
             mouseFromX <= (x + r) ||
             mouseFromY >= y ||     
@@ -50,7 +46,13 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     
     
     public void mouseDragged(MouseEvent e){
+        int mouseToX = e.getX();
+        int mouseToY = e.getY();
         
+        x =+ (x - mouseFromX);
+        y =+ (y - mouseFromY); 
+        
+        canvasComponent.repaint;
     }
     
     public void mouseMoved(MouseEvent e) {}
