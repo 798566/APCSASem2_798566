@@ -13,10 +13,10 @@ public class MySwingApplication implements Runnable
         jFrame = new JFrame("Window");
         jFrame.setSize(400,400);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        canvasComponent = new CanvasComponent(50);
+        canvasComponent = new CanvasComponent(100,100);
         jFrame.add(canvasComponent);
         jFrame.setVisible(true);
-        //jFrame.addKeyListener(canavsComponent);
+        //jFrame.addKeyListener(canvasComponent);
     }
     
     public static void main() {
