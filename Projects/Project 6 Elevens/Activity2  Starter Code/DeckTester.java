@@ -8,19 +8,47 @@ public class DeckTester {
      *  @param args is not used.
      */
     public static void main(String[] args) {
-        String[] ranks = {"A", "B", "C"};
-        String[] suits = {"Giraffes", "Lions"};
-        int[] values = {2, 1, 6};
-        Deck deck1 = new Deck(ranks, suits, values);
+        String[] ranks = {"jack", "queen", "king"};
+        String[] suits = {"blue", "red"};
+        int[] pointValues = {11, 12, 13};
+        Deck d = new Deck(ranks, suits, pointValues);
 
-        String[] rank = {"A", "B", "C"};
-        String[] suit = {"Cows", "Sheeps"};
-        int[] value = {1, 2, 3};
-        Deck deck2 = new Deck(rank, suit, value);
+        System.out.println("**** Original Deck Methods ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
 
-        String[] r = {"A", "B", "C"};
-        String[] s = {"Mice", "Squirels"};
-        int[] v = {5, 10, 60};
-        Deck deck3 = new Deck(r, s, v);
+        System.out.println("**** Deal a Card ****");
+        System.out.println("  deal: " + d.deal());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deck Methods After 1 Card Dealt ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deal Remaining 5 Cards ****");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("  deal: " + d.deal());
+        }
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deck Methods After All Cards Dealt ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deal a Card From Empty Deck ****");
+        System.out.println("  deal: " + d.deal());
+        System.out.println();
+        System.out.println();
     }
 }
