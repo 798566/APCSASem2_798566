@@ -75,7 +75,7 @@ public class Shuffler {
      */
     public static void selectionShuffle(int[] values) {
         int[] shuffled;
-        shuffled = new int[52];
+        shuffled = new int[values.length];
         for (int k = values.length; k > 0; k--){
             int r = (int)(Math.random()*k) + 1;
             shuffled[r] = values[k];
