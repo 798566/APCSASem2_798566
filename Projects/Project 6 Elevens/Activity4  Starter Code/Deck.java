@@ -60,11 +60,12 @@ public class Deck {
      * and reset the size to represent the entire deck.
      */
     public void shuffle() {
-        int[] shuffled;
-        shuffled = new int[52];
-        for (int k = 52; k > 0; k--){
-            int r = (int)(Math.random()*k) + 1;
-            shuffled[r] = Deck[k];
+        int[] shuffled= new int[cards.size()];
+        for (int k = cards.size(); k > 0; k--){
+            int r = (int)(Math.random()*k) + 1; 
+            Card temp = cards.get(k);
+            cards.set(k, cards.get(r));
+            cards.set(r, temp);
         }
         size = cards.size();
     }

@@ -2,10 +2,10 @@
 dependency1.from=CardTester
 dependency1.to=Card
 dependency1.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=738
+editor.fx.0.width=816
+editor.fx.0.x=552
+editor.fx.0.y=141
 objectbench.height=138
 objectbench.width=753
 package.divider.horizontal=0.6
