@@ -2,8 +2,8 @@
 /**
  * Write a description of class Sort here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Sophia 
+ * @version 313
  */
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public abstract class Sorter implements Cloneable
     public long extraSpaceCount;
     public long startingNanoTime;
     public long elapsedNanoTime;
-//    public long recursiveCallCount;
+    //    public long recursiveCallCount;
     public int arrayLength;
 
     /**
@@ -25,27 +25,27 @@ public abstract class Sorter implements Cloneable
     {
         reset(null);
     }
-    
+
     public Sorter clone() {
         try {
-        return (Sorter)super.clone();
-    }
+            return (Sorter)super.clone();
+        }
         catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
     }
-    
+
     public void reset(int[] a) {
         comparisonCount = 0;
         moveCount = 0;
         extraSpaceCount = 0;
         startingNanoTime = System.nanoTime();
-//        recursiveCallCount = 0;
+        //        recursiveCallCount = 0;
         if (a != null) {
             arrayLength = a.length;
         }
     }
-    
+
     public void done() {
         elapsedNanoTime = System.nanoTime() - startingNanoTime;
     }
@@ -58,29 +58,29 @@ public abstract class Sorter implements Cloneable
         comparisonCount++;
         return (leftInt < rightInt);
     }
-    
+
     public boolean lessEqual(int leftInt, int rightInt) {
         comparisonCount++;
         return (leftInt <= rightInt);
     }
-    
+
     public void swap(int[] a, int index1, int index2) {
-            moveCount += 3;
-            int value = a[index1];
-            a[index1] = a[index2];
-            a[index2] = value;
+        moveCount += 3;
+        int value = a[index1];
+        a[index1] = a[index2];
+        a[index2] = value;
     }
-    
+
     public void move(int[] a, int destIndex, int sourceIndex) {
-                moveCount++;
-                a[destIndex] = a[sourceIndex];
+        moveCount++;
+        a[destIndex] = a[sourceIndex];
     }
 
     public void moveValue(int[] a, int destIndex, int value) {
-                moveCount++;
-                a[destIndex] = value;
+        moveCount++;
+        a[destIndex] = value;
     }
-    
+
     public int[] allocateTempArray(int length) {
         extraSpaceCount += length;
         return new int[length];
@@ -90,11 +90,11 @@ public abstract class Sorter implements Cloneable
         extraSpaceCount += a.length;
         return Arrays.copyOf(a, a.length);
     }
-    
-//    public void recursiveCall() {
-//        recursiveCallCount++;
-//    }
+
+    //    public void recursiveCall() {
+    //        recursiveCallCount++;
+    //    }
 
     public abstract void sort(int[] a);
-    
+
 }

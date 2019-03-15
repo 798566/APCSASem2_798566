@@ -1,30 +1,40 @@
 
 /**
- * Write a description of class QuickSorter here.
- * 
- * @author Sophia 
+ * Write a description of class SelectionSorter here.
+ *
+ * @author Sophia
  * @313
  */
-public class QuickSorter extends Sorter
+public class SelectionSorter extends Sorter
 {
-
-    /**
-     * Constructor for objects of class QuickSorter
-     */
-    public QuickSorter()
+    public SelectionSorter()
     {
         super();
+    }
+
+    public void sort(int arr[]){
+        for (int i = 0; i < arr.length - 1; i++) {
+            int smallest = arr[i];
+            int smallestIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < smallest) {
+                    smallest = arr[j];
+                    smallestIndex = j;
+                }
+            }
+            int original = arr[i];
+            arr[i] = smallest;
+            arr[smallestIndex] = original;
+        }
     }
 
     public void onePass1(int[] a, int initialLeftIndex, int limitRightIndex) {
         int pivotValue = a[initialLeftIndex];
         int rightIndex = limitRightIndex - 1;
         int leftIndex = initialLeftIndex + 1;
-        while (leftIndex <= rightIndex) {
-            if (less(pivotValue, a[leftIndex])) {
-                while ((rightIndex >= leftIndex) && less(pivotValue, a[rightIndex])) {
-                    rightIndex--;
-                }
+        for (int i = leftIndex; i < rightIndex; i++){
+            for (pivotValue; pivtValue < )) {
+
                 if (leftIndex < rightIndex) {
                     swap(a, leftIndex, rightIndex);
                     rightIndex--;
@@ -33,13 +43,13 @@ public class QuickSorter extends Sorter
             } else {
                 leftIndex++;
             }
-        }
-        if (initialLeftIndex < leftIndex - 1) {
-            swap(a, initialLeftIndex, leftIndex - 1);
-            onePass(a, initialLeftIndex, leftIndex - 1);
-        }
-        if (leftIndex < limitRightIndex) {
-            onePass(a, leftIndex, limitRightIndex);
+            if (initialLeftIndex < leftIndex - 1) {
+                swap(a, initialLeftIndex, leftIndex - 1);
+                onePass(a, initialLeftIndex, leftIndex - 1);
+            }
+            if (leftIndex < limitRightIndex) {
+                onePass(a, leftIndex, limitRightIndex);
+            }
         }
     }
 

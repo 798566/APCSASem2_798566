@@ -2,12 +2,12 @@
 /**
  * Write a description of class SortRunner here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sophia 
+ * @313
  */
 public class SortRunner
 {
-    static int[] lengthArray = { 10, 100, 1000, 10000 };
+    static int[] lengthArray = { 10, 100, 1000 };
     static boolean printArrayFlag = false;
 
     public static boolean isSorted(int[] a) {
@@ -211,7 +211,7 @@ public class SortRunner
         printOneStatistic(outerSorterArray, COMPARISON_STAT_ID, name);
         printOneStatistic(outerSorterArray, MOVE_STAT_ID, name);
         printOneStatistic(outerSorterArray, EXTRA_SPACE_STAT_ID, name);
-//        printOneStatistic(outerSorterArray, ELAPSED_TIME_STAT_ID, name);
+    //        printOneStatistic(outerSorterArray, ELAPSED_TIME_STAT_ID, name);
     }
 
     public static void main() {
@@ -223,8 +223,8 @@ public class SortRunner
         Sorter[][] heapSorterArray = new Sorter[lengthArray.length][];
         for (int lengthIndex = 0; lengthIndex < lengthArray.length; lengthIndex++) {
             int length = lengthArray[lengthIndex];
-            //             SelectionSorter selectionSorter = new SelectionSorter();
-            //             selectionSorterArray[lengthIndex] = runStandardSorts(selectionSorter, length, "Selection sort");
+            SelectionSorter selectionSorter = new SelectionSorter();
+            selectionSorterArray[lengthIndex] = runStandardSorts(selectionSorter, length, "Selection sort");
             //             InsertionSorter insertionSorter = new InsertionSorter();
             //             insertionSorterArray[lengthIndex] = runStandardSorts(insertionSorter, length, "Insertion sort");
             //             MergeSorter mergeSorter = new MergeSorter();
@@ -234,7 +234,7 @@ public class SortRunner
             QuickSorter quickSorter = new QuickSorter();
             quickSorterArray[lengthIndex] = runStandardSorts(quickSorter, length, "Quick sort");
         }
-        // printStandardResults(selectionSorterArray, "Selection sort");
+        printStandardResults(selectionSorterArray, "Selection sort");
         // printStandardResults(insertionSorterArray, "Insertion sort");
         // printStandardResults(mergeSorterArray, "Merge sort");
         // printStandardResults(heapSorterArray, "Heap sort");
