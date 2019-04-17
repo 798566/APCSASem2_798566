@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=prob4
+comment0.text=\n\ Write\ a\ description\ of\ class\ prob4\ here.\n\n\ @author\ Sophia\n\ @version\ 0415\n
+comment1.params=names
+comment1.target=void\ sortStrings(java.util.ArrayList)
+comment2.params=names
+comment2.target=void\ shuffleStrings(java.util.ArrayList)
+comment3.params=word
+comment3.target=void\ insertString(java.lang.String)
+numComments=4

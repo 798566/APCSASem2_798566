@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Cell
+comment0.text=\n\ Write\ a\ description\ of\ class\ Cell\ here.\n\n\ @Sophia\n\ @version\ 0415\n
+comment1.params=
+comment1.target=Cell()
+comment2.params=
+comment2.target=boolean\ getOccupied()
+comment3.params=newOccupied
+comment3.target=void\ setOccupied(boolean)
+comment4.params=
+comment4.target=void\ loadNeighbors()
+numComments=5
